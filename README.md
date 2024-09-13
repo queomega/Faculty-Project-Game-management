@@ -6,6 +6,40 @@ Pentru a verifica functionarea checker-ului va trebui sa descarcati tot depozitu
 ```shell
 ./checker.sh
 ````
+Acest proiect presupune implementarea unui algoritm care gestioneaza o competitie intre echipe, folosind mai multe structuri de date pentru a organiza si procesa echipele in functie de punctajul lor. Procesul este impartit in mai multe etape.
+
+Pasi principali:
+Crearea listei initiale de echipe:
+
+Se creeaza o lista de echipe citite dintr-un fisier, adaugand elementele la inceputul listei pentru o complexitate de O(1).
+Eliminarea echipelor cu punctaj mic:
+
+Echipele cu cel mai mic punctaj sunt eliminate din lista astfel incat sa ramana n echipe, unde n este o putere a lui 2.
+Daca mai multe echipe au acelasi punctaj, se elimina prima echipa gasita.
+Organizarea meciurilor:
+
+Se formeaza o coada de meciuri intre echipe in ordinea in care acestea apar in lista (primele doua echipe formeaza primul meci si asa mai departe).
+Gestionarea invinsilor si castigatorilor:
+
+Se creeaza doua stive: una pentru echipele invinse si una pentru castigatori.
+Echipele castigatoare primesc un punct in plus.
+Daca doua echipe au acelasi punctaj in cadrul unui meci, castiga prima echipa adaugata.
+Dupa fiecare runda, echipele din stiva invinsilor sunt eliminate, iar castigatorii sunt introdusi in urmatoarea runda de meciuri.
+Continuarea meciurilor pana la ramanerea a 8 echipe:
+
+Procesul continua pana raman 8 echipe in competitie, care sunt salvate intr-o lista separata.
+Clasamentul final (BST):
+
+Cele 8 echipe ramase sunt introduse intr-un Binary Search Tree (BST), ordonat dupa punctaj.
+Clasamentul final este afisat in ordine descrescatoare. Daca doua echipe au acelasi punctaj, acestea se ordoneaza alfabetic, in ordine descrescatoare dupa nume.
+Structuri de date folosite:
+Lista simplu inlantuita: Pentru organizarea echipelor.
+Coada: Pentru formarea si gestionarea meciurilor.
+Stive: Pentru separarea castigatorilor si invinsilor dupa fiecare runda.
+Arbore binar de cautare (BST): Pentru afisarea clasamentului final al ultimelor 8 echipe.
+Acest proiect pune accent pe manipularea structurilor de date si pe algoritmi de organizare si filtrare a echipelor, gestionand eficient competitiile pana la determinarea castigatorului.
+
+
 addToList:
 Rol: Adauga o echipa la inceputul unei liste de echipe.
 
